@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
+import logo from '../Images/logo.png'
 import './Header.css'
 
 const Header = () => {
@@ -8,9 +9,9 @@ const Header = () => {
     return (
         <nav className="nav">
             <ul>
-                {/* <li>
+                <li>
                     <img className="logo" src={logo} alt="" />
-                </li> */}
+                </li>
                 <li>
                     <Link to="/home">Home</Link>
                     

@@ -13,11 +13,15 @@ const Orders = () => {
         .then(data => setOrders(data));
     },[])
     return (
-        <div>
-            <h1>{}Order Here</h1>
+        <div className="container">
+            <h1>You have ordered...</h1>
+        
+        <div className="row">
+            
             {
                 orders.map( order =><OrderedComponents order={order}></OrderedComponents> )
             }
+        </div>
         </div>
     );
 };

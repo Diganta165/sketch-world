@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="Container">
       <UserContext.Provider value ={[loggedInUser,setLoggedInUser]}>
-        {/* <p>Name: {loggedInUser.name}</p> */}
+        
         
       <Router>
         <Header/>

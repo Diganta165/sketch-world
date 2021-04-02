@@ -1,6 +1,7 @@
 .nav{
     margin-top:5px;
-    margin-left: 200px;
+    margin-left: 300px;
+    margin-bottom: 10px;
 }
 .nav li{
     display: inline;

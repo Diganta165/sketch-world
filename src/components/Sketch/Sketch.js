@@ -12,7 +12,7 @@ const Sketch = (props) => {
     
     return (
         <div className="col-md-3">
-            <img style={{height:'250px'}} src={imageURL} alt="" />
+            <img style={{height:'250px', margin:'10px', padding:'5px'}} src={imageURL} alt="" />
             <h3>Name:{name} Price: ${price} <button onClick ={() => handlePurchase(id)}>Buy</button></h3>
 
         </div>

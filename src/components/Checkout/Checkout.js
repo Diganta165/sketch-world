@@ -15,26 +15,15 @@ const Checkout = () => {
         fetch('https://glacial-springs-52300.herokuapp.com/sketches')
         .then(res => res.json())
         .then(data => setSketches(data))
-        // .then(data => console.log('hi there',data))
+        
     },[])
     console.log('fetch kora data db theke',sketches)
 
-    // let sketch = sketches.find(function(post, index){
-    //     // console.log(post._id)
-    //     if(post._id == id){
-    //         return true;
-    //     }
-    // })
 
     let sketch = sketches.find(({_id})=> _id === id);
 
     console.log('sketch',sketch)
-    // const {name,price,imageURL} = sketch
-    // if(sketch){
-    //     const {name,price,imageURL} = sketch;
-    // }
-
-    // const {name,price,imageURL} = sketch;
+    
     const email = loggedInUser.email;
     const userName = loggedInUser.name;
     const checkoutEventHandler =() =>{
@@ -42,9 +31,9 @@ const Checkout = () => {
         if(sketch){
             const orderDetails = {email,userName,name:sketch.name,price: sketch.price,imageURL: sketch.imageURL,orderTime : new Date() }
         
-        // const orderDetails = {email,userName,name,price, imageURL,orderTime : new Date() }
+        
         console.log(orderDetails)
-        // ,name,price, imageURL
+        
         fetch('https://glacial-springs-52300.herokuapp.com/addOrder',{
             method: 'POST',
             headers:{ 

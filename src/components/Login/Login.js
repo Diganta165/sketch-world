@@ -16,7 +16,7 @@ const Login = () => {
     if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);
      }
-    // firebase.initializeApp(firebaseConfig);
+    
     const  handleGoogleSignIn =() =>{
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
@@ -25,37 +25,37 @@ const Login = () => {
     /** @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
 
-    const {displayName, email} = result.user; // puro user info na niye just display name ar email distructure kore neya holo result.user theke
-    const signedInUser = {name: displayName, email} //signedInUser object er moddhe name(display name ta name hisebe dekhabe) r email initialize kora holo
+    const {displayName, email} = result.user; 
+    const signedInUser = {name: displayName, email} 
     setLoggedInUser(signedInUser);
     storeAuthToken();
     
-    // ...
+    
   }).catch((error) => {
-    // Handle Errors here.
+    
     var errorCode = error.code;
     var errorMessage = error.message;
-    // The email of the user's account used.
+    
     var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
+    
     var credential = error.credential;
-    // ...
+    
   });
     }
 
     const storeAuthToken = () => {
-      firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
-        // Send token to your backend via HTTPS
-        // ...
+      firebase.auth().currentUser.getIdToken( true).then(function(idToken) {
+        
+        
         sessionStorage.setItem('token', idToken);
         history.replace(from);
       }).catch(function(error) {
-        // Handle error
+        
       });
     }
     return (
         <div>
-            <h1>This is login and here magic happens</h1>
+            <h1>Please Login</h1>
             <button onClick={handleGoogleSignIn}>Google SignIn</button>
         </div>
     );

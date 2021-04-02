@@ -42,15 +42,15 @@ const Admin = () => {
     }
 
     return (
-        <div>
-            <h1>They see me rolling, they hating, pattroling try to catch me right in the raid</h1>
+        <div className="container">
+            <h1>Admin's Panel</h1>
 
             <section>
             <form onSubmit={handleSubmit(onSubmit)}>
 
             <input name="name" defaultValue="Sketch Name" ref={register} />
             <br/>
-            <input name="price" defaultValue="Price" type="number" ref={register} />
+            <input name="price" placeholder="Price" defaultValue="Price" type="number" ref={register} />
             <br/>
             <input name="exampleRequired" type="file" onChange = {handleImageUpload} />
             <br/>

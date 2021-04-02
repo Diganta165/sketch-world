@@ -2,9 +2,9 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 
 const OrderedComponents = (props) => {
-    console.log(props.order)
+    
     let id= props.order._id
-    const {email,userName,name,price,imageURL} = props.order;
+    const {name,price,imageURL, orderTime} = props.order;
     return (
         <div>
             <Card style={{ width: '18rem' }}>
@@ -12,7 +12,7 @@ const OrderedComponents = (props) => {
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
-                        {price}
+                        <b>Price:</b> ${price} <br/> <b>Purchased Time:</b> {orderTime}
                 </Card.Text>
                 
             </Card.Body>
